@@ -1,0 +1,25 @@
+#preview{
+  width: 200px;
+  height: 200px;
+}
+
+h2 {
+  cursor: pointer;
+}
+
+
+#imageContainer {
+  padding: 20px;
+}
+
+#newImage {
+  margin: 5px;
+}
+
+#closeImage{
+  cursor: pointer;
+}
+
+input {
+  margin: 5px;
+}

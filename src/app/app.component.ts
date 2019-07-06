@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ImageServiceService} from './image-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-project';
+  currentImageText = '';
+  currentImageLink = '';
+  displayImage = false;
+  private currentImage: any;
+
+  constructor(private imageService: ImageServiceService) {
+  }
+
+  saveImage() {
+    this.imageService.saveImage(this.currentImageText, this.currentImageLink);
+  }
+
+  getImages() {
+    return this.imageService.getImages();
+  }
+
+  showImage(imageElement: any) {
+    this.currentImage = imageElement;
+    this.displayImage = true;
+  }
+
+  closeImage() {
+    this.displayImage = false;
+  }
 }
